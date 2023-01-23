@@ -1,5 +1,7 @@
 package dev.nano.core;
 
+import dev.nano.core.util.Assert;
+
 public class ApplicationContext {
 
     public ApplicationContext(Class... configClasses) {
@@ -13,6 +15,7 @@ public class ApplicationContext {
     }
 
     private void registerConfigClass (Class[] configClasses) {
+        Assert.notEmpty(configClasses, "config classes list must not be empty");
         for (var configClass: configClasses) {
             if (configClass.isAnnotation() || configClass.isInterface())
                 continue;

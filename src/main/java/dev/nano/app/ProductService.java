@@ -1,7 +1,10 @@
 package dev.nano.app;
 
+import dev.nano.core.annotation.Component;
+
 import java.util.List;
 
+@Component
 public class ProductService {
     private final ProductRepository productRepository;
 
